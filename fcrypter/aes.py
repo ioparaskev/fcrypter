@@ -8,9 +8,10 @@ from fcrypter.base.templates import Cryptor
 class AESCryptorEAX(Cryptor):
     """
     AES EAX mode file encryption through use of pycryptodome AES library
+
     For details, see
-    https://en.wikipedia.org/wiki/EAX_mode
-    http://web.cs.ucdavis.edu/~rogaway/papers/eax.pdf
+        https://en.wikipedia.org/wiki/EAX_mode
+        http://web.cs.ucdavis.edu/~rogaway/papers/eax.pdf
     """
     def __init__(self):
         super(AESCryptorEAX, self).__init__(tuple([16, 24, 32]))
@@ -25,17 +26,20 @@ class AESCryptorEAX(Cryptor):
 
     def encrypt_file(self, key, f_path, encr_fpath):
         """
-        Encrypts files, then digests
+        Encrypts files, then digests.
         Provides plaintext & ciphertext integrity
+
         More info about "Encrypt then MAC" in Bellare & Namprempre paper:
+
             Authenticated Encryption: Relations among notions
             and analysis of the generic composition paradigm
 
-            [Link]: http://cseweb.ucsd.edu/~mihir/papers/oem.pdf
+            http://cseweb.ucsd.edu/~mihir/papers/oem.pdf
 
         Since AES library doesn't provide easy way to do this in seperate
         actions we add 16 dummy bytes as MAC, write the encrypted content
         and then seek the dummy bytes and overwrite with the correct MAC
+
         This allows us to read a file for encryption in small chunks to avoid
         insufficient memory errors
         """

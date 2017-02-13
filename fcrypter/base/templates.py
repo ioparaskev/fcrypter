@@ -16,6 +16,7 @@ class Cryptor(object):
     def __init__(self, supported_sizes):
         """
         Constructor
+
         :param supported_sizes: supported key sizes for encryption/decryption
         :type supported_sizes: tuple
         """
@@ -27,11 +28,13 @@ class Cryptor(object):
         If size not specified, chooses randomly from the supported sizes
         If chars are specified, generates password for those chars
         Else generates random size bytes
+
         :param size: password size
         :type size: int
         :param chars: chars to choose password from
         :type chars: iterable
-        :return:
+        :return: random password
+        :rtype: bytes
         """
         rand = SystemRandom()
         if not size:
@@ -40,11 +43,12 @@ class Cryptor(object):
         if not chars:
             return get_random_bytes(size)
 
-        return "".join((rand.choice(chars) for _ in range(size)))
+        return bytes("".join((rand.choice(chars) for _ in range(size))))
 
     def verify_supported_key_size(self, key):
         """
         Verifies key size is supported
+
         :param key: key to be used for encryption
         """
         if self.supported_sizes and len(key) not in self.supported_sizes:
@@ -56,8 +60,10 @@ class Cryptor(object):
     def encrypt_file(self, key, f_path, encr_fpath):
         """
         File encryption base method
+
         Needs a key, a file path to encrypt and a resulting file path for the
         encrypted file to be saved
+
         :param key: a key to use for the file encryption
         :param f_path: absolute path for the file to be encrypted
         :param encr_fpath: absolute path for the encrypted file to be saved
@@ -68,8 +74,10 @@ class Cryptor(object):
     def decrypt_file(self, key, encr_fpath, decr_fpath):
         """
         File decryption base method
+
         Needs a key, a file path to decrypt and a resulting file path for the
         decrypted file to be saved
+
         :param key: a key to use for the file decryption
         :param encr_fpath: absolute path for the encrypted file
         :param decr_fpath: absolute path for the decrypted file to be saved
