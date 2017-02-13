@@ -1,0 +1,2 @@
+class WrongKeySizeError(Exception):
+    pass
