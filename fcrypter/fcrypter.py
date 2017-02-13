@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
 from collections import namedtuple
-import aes
+from fcrypter import aes
 
 
 supported_ciphers = namedtuple("ciphers", ("name", "callclass"))

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from __future__ import absolute_import
 import click
-from fcrypter import get_supported_ciphers
+from fcrypter.fcrypter import get_supported_ciphers
 
 
 supported_ciphers = get_supported_ciphers()

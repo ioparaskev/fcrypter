@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
-from base.templates import Cryptor
+from fcrypter.base.templates import Cryptor
 
 
 class AESCryptorEAX(Cryptor):

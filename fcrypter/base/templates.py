@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
 from abc import ABCMeta, abstractmethod
 from random import SystemRandom
-import custom_exceptions as cryexc
+from fcrypter.base import custom_exceptions as cryexc
 from Crypto.Random import get_random_bytes
 
 
