@@ -5,9 +5,11 @@ fcrypter
 
 .. image:: https://img.shields.io/pypi/v/fcrypter.svg
         :target: https://pypi.python.org/pypi/fcrypter
+        :alt: pypi
 
-.. image:: https://img.shields.io/travis/ioparaskev/fcrypter.svg
+.. image:: https://travis-ci.org/ioparaskev/fcrypter.svg?branch=master
         :target: https://travis-ci.org/ioparaskev/fcrypter
+        :alt: travis-ci
 
 .. image:: https://readthedocs.org/projects/fcrypter/badge/?version=latest
         :target: https://fcrypter.readthedocs.io/en/latest/?badge=latest
@@ -17,6 +19,8 @@ fcrypter
      :target: https://pyup.io/repos/github/ioparaskev/fcrypter/
      :alt: Updates
 
+.. image:: 	https://img.shields.io/badge/license-GPLv3-blue.svg
+     :alt: GPLv3 License
 
 File encryption made simple
 
